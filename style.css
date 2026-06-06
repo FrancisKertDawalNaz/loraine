@@ -1072,3 +1072,71 @@ footer strong {
         align-items: center;
     }
 }
+
+/* === LIKE BUTTON & BUBBLE === */
+.section-like-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--pink-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    color: var(--pink-accent);
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(217,79,134,0.08);
+    transition: transform 0.12s ease, background 0.18s ease, color 0.18s ease;
+    z-index: 10;
+}
+
+.section-like-btn:active { transform: scale(0.96); }
+
+.section-like-btn.hearted {
+    background: linear-gradient(135deg, var(--pink-deep), var(--pink-accent));
+    color: white;
+    transform: scale(1.06);
+}
+
+.section-like-bubble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    background: white;
+    color: var(--pink-accent);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.86rem;
+    box-shadow: 0 12px 34px rgba(217,79,134,0.12);
+    opacity: 0;
+    transform: translateY(0) scale(0.98);
+    transition: transform 0.48s cubic-bezier(.2,.9,.2,1), opacity 0.28s ease;
+    z-index: 11;
+    white-space: nowrap;
+}
+
+.section-like-bubble.show {
+    opacity: 1;
+    transform: translateY(-48px) scale(1);
+}
+
+@keyframes like-pop {
+    0% { transform: translateY(0) scale(0.96); opacity: 0; }
+    60% { transform: translateY(-36px) scale(1.06); opacity: 1; }
+    100% { transform: translateY(-58px) scale(1); opacity: 0; }
+}
+
+.section-like-bubble.anim {
+    animation: like-pop 0.9s ease forwards;
+}
+
+@media (max-width: 900px) {
+    .section-like-bubble { font-size: 0.85rem; }
+    .section-like-btn { top: 12px; right: 12px; width: 38px; height:38px; }
+}

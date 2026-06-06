@@ -102,3 +102,50 @@ window.addEventListener("scroll", () => {
       a.getAttribute("href") === "#" + current ? "var(--pink-accent)" : "";
   });
 });
+
+// === Like buttons per section with animated text bubble ===
+function ensureRelative(el) {
+  const cs = getComputedStyle(el);
+  if (cs.position === 'static') el.style.position = 'relative';
+}
+
+function showLikeBubble(section, clickX, clickY) {
+  const messages = ['Nice!', 'Liked!', 'Awesome!', 'So pretty!', 'Love it!'];
+  const msg = messages[Math.floor(Math.random() * messages.length)];
+  const bubble = document.createElement('div');
+  bubble.className = 'section-like-bubble';
+  bubble.textContent = msg;
+  section.appendChild(bubble);
+  const rect = section.getBoundingClientRect();
+  // position near click but keep within bounds
+  const left = Math.min(Math.max(clickX - rect.left - 40, 12), rect.width - 80);
+  const top = Math.min(Math.max(clickY - rect.top - 20, 12), rect.height - 40);
+  bubble.style.left = left + 'px';
+  bubble.style.top = top + 'px';
+  // trigger animation
+  requestAnimationFrame(() => {
+    bubble.classList.add('show');
+    bubble.classList.add('anim');
+  });
+  // cleanup after animation
+  setTimeout(() => {
+    bubble.remove();
+  }, 950);
+}
+
+document.querySelectorAll('section[id]').forEach((sec) => {
+  ensureRelative(sec);
+  const btn = document.createElement('button');
+  btn.className = 'section-like-btn';
+  btn.setAttribute('aria-label', 'Like section');
+  btn.innerHTML = '♡';
+  sec.appendChild(btn);
+  btn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    const isHearted = btn.classList.toggle('hearted');
+    btn.innerHTML = isHearted ? '♥' : '♡';
+    const clickX = ev.clientX || (window.innerWidth / 2);
+    const clickY = ev.clientY || (window.innerHeight / 2);
+    showLikeBubble(sec, clickX, clickY);
+  });
+});
