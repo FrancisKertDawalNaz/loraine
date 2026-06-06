@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anne Lorraine C. Peñaverde | UI/UX Designer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+        <link rel="stylesheet" href="style.css">
+        
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#certifications" onclick="closeMenu()">Certs</a>
+        <a href="#education" onclick="closeMenu()">Education</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">Anne Lorraine ✿</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certs</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="hero-inner">
+            <!-- LEFT: Text -->
+            <div class="hero-text-col">
+                <div class="hero-tag">✦ Open for Full-Time Opportunities</div>
+                <h1 class="hero-name">Anne Lorraine<br /><em>C. Peñaverde</em></h1>
+                <p class="hero-title">UI/UX Designer &amp; Front-End Developer</p>
+                <p class="hero-bio">
+                    Information Technology student specializing in Web and Mobile Application Development.
+                    Crafting beautiful wireframes, prototypes, and layouts using Figma, Adobe XD, and Canva.
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                    <a href="#about" class="btn-outline">Learn More</a>
+                </div>
+            </div>
+            <!-- RIGHT: Image -->
+            <div class="hero-img-col">
+                <div class="hero-img-frame">
+                    <img src="img/ann.jpg" alt="Anne Lorraine" class="hero-image">
+            
+                    <div class="hero-badge hero-badge-1">🎨 UI/UX Design</div>
+                    <div class="hero-badge hero-badge-2">💻 Front-End Dev</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            Scroll
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-inner reveal">
+            <!-- LEFT: Image -->
+            <div class="about-img-col">
+                <div class="about-img-frame">
+                    <img src="img/ann.jpg" alt="Anne Lorraine" class="hero-image">
+                </div>
+            </div>
+            <!-- RIGHT: Text -->
+            <div class="about-text-col">
+                <div class="section-label">Who I Am</div>
+                <h2 class="section-title">About Me</h2>
+                <p class="about-desc">
+                    Hi! I'm Anne Lorraine, an Information Technology student at Laguna State Polytechnic University
+                    specializing in Web and Mobile Application Development. I have a deep passion for UI/UX design —
+                    creating experiences that are not just functional, but genuinely beautiful and intuitive.
+                </p>
+                <p class="about-desc">
+                    I love turning ideas into polished visual designs using Figma and Adobe XD, and bringing them
+                    to life with clean front-end code. I'm currently seeking an internship or entry-level opportunity
+                    where I can grow as a designer and developer while contributing creative, user-centered solutions.
+                </p>
+                <div class="about-tags">
+                    <span class="about-tag">🎨 UI/UX Design</span>
+                    <span class="about-tag">💻 Front-End Dev</span>
+                    <span class="about-tag">📱 Mobile Apps</span>
+                    <span class="about-tag">🌐 Web Dev</span>
+                    <span class="about-tag">✨ Prototyping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS MARQUEE -->
+    <section id="skills">
+        <div class="section-label">What I Use</div>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="marqueeTrack">
+                <!-- Items duplicated in JS for seamless loop -->
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="section-label">Where I've Worked</div>
+        <h2 class="section-title">Experience</h2>
+        <div class="exp-card reveal">
+            <div class="exp-role">UI/UX Designer &amp; Front-End Developer</div>
+            <div class="exp-company">Caleb's Kitchen</div>
+            <span class="exp-date">March 2025 – September 2025</span>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <div class="section-label">What I've Earned</div>
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-list reveal">
+            <div class="cert-item">
+                <div class="cert-dot"></div>
+                <div class="cert-text">Building Your Digital Backbone: Unlocking the Secrets of Network Communication
+                </div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-dot"></div>
+                <div class="cert-text">Vigilance on Digital Realm: Strategies for Cybersecurity Intelligence</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-dot"></div>
+                <div class="cert-text">Introduction to Web Development</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-dot"></div>
+                <div class="cert-text">Fundamentals of Pitching and Start Up Projects</div>
+            </div>
+            <div class="cert-item">
+                <div class="cert-dot"></div>
+                <div class="cert-text">Information Specialist – HTML and CSS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-label">Where I'm Studying</div>
+        <h2 class="section-title">Education</h2>
+        <div class="edu-card reveal">
+            <div class="edu-degree">BS in Information Technology</div>
+            <div class="edu-school">Laguna State Polytechnic University – Siniloan Host Campus</div>
+            <span class="edu-years">2022 – Present</span>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-inner">
+            <div class="section-label">Say Hello</div>
+            <h2 class="section-title">Let's Connect ✿</h2>
+            <div class="contact-links reveal">
+                <a href="tel:+639636313644" class="contact-link"><span>📞</span> +63 963-631-3644</a>
+                <a href="mailto:annelorrainepenaverde@gmail.com" class="contact-link"><span>✉️</span>
+                    annelorrainepenaverde@gmail.com</a>
+                <a href="https://linkedin.com/in/annelorrainepenaverde" target="_blank"
+                    class="contact-link"><span>💼</span> LinkedIn</a>
+                <a href="#" class="contact-link"><span>📍</span> Infanta, Quezon</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed with 🩷 for <strong>Anne Lorraine C. Peñaverde</strong> &nbsp;·&nbsp; UI/UX Designer &amp; Front-End
+            Developer</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
